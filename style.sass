@@ -5,6 +5,7 @@ $btnColor: #000
 
 a
   text-decoration: none
+  color: black
 
 .container
   display: flex
@@ -26,14 +27,48 @@ a
   width: 100%
   display: flex
   justify-content: space-between
-  & .share
-    & i
-      font-size: 24px
-      color: $btnColor
-  & .qrcode
-    & i
-      font-size: 24px
-      color: $btnColor
+
+i
+  font-size: 24px
+  color: $btnColor
+
+.modal-container
+  display: flex
+  justify-content: center
+  align-items: center
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 10
+  background-color: rgba(0,0,0,0.5)
+  transition: all 0.3s
+  visibility: hidden
+  opacity: 0
+  &:target
+    visibility: visible
+    opacity: 1
+  & div
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 300px
+    height: 300px
+    background: white
+    border-radius: 10px
+  & div img
+    width: 150px
+    height: 150px
+
+.close-modal
+  position: absolute
+  right: 16px
+  top: 4px
+  font-size: 32px
+  color: rgba(0,0,0,0.5)
+  &:hover
+    color: rgb(0,0,0)
 
 .profile
   display: flex
@@ -48,9 +83,10 @@ a
     margin: 8px 0px
     font-size: 18px
   p
+    width: 250px
+    text-align: center
     margin: 0
     font-size: 12px
-
 
 .links
   width: 100%
@@ -62,7 +98,4 @@ a
     margin: 4px 10px
     display: flex
     justify-content: center
-  & i
-    font-size: 24px
-    color: $btnColor
 
