@@ -25,6 +25,7 @@ body {
   display: grid;
   place-content: center;
   background-color: #1f2937;
+  padding: 16px;
 }
 
 .card {
