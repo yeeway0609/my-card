@@ -1,4 +1,21 @@
-$btnColor: #000
+@property --gradient-angle
+  syntax: "<angle>"
+  initial-value: 0deg
+  inherits: false
+
+@keyframes rotation
+  0%
+    --gradient-angle: 0deg
+  100%
+    --gradient-angle: 360deg
+
+$bgColor: #1f2937
+$cardColor: white
+$iconColor: #000
+$gradColor1: #523ab4
+$gradColor2: #fd1d1d
+$gradColor3: #e99f36
+
 *
   box-sizing: border-box
   position: relative
@@ -7,21 +24,34 @@ a
   text-decoration: none
   color: black
 
-.container
-  display: flex
-  justify-content: center
-  align-items: center
-  padding: 16px
+body
+  display: grid
+  place-content: center
+  background-color: $bgColor
 
 .card
+  position: relative
   width: 400px
   height: auto
   display: flex
   flex-direction: column
   align-items: center
   padding: 36px 24px
-  border: 1px solid $btnColor
+  background-color: $cardColor
   border-radius: 10px
+
+.card::before,
+.card::after
+  content: ""
+  position: absolute
+  inset: -0.5rem
+  z-index: -1
+  background: conic-gradient(from var(--gradient-angle), $gradColor1, $gradColor2, $gradColor3, $gradColor2, $gradColor1)
+  border-radius: inherit
+  animation: rotation 3s linear infinite
+
+.card::after
+  filter: blur(3.5rem)
 
 .header
   width: 100%
@@ -30,25 +60,24 @@ a
 
 i
   font-size: 24px
-  color: $btnColor
+  color: $iconColor
 
 .modal
   display: flex
   justify-content: center
   align-items: center
   position: fixed
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
+  inset: 0
   z-index: 10
   background-color: rgba(0,0,0,0.5)
   transition: all 0.3s
   visibility: hidden
   opacity: 0
+  pointer-events: none
   &:target
     visibility: visible
     opacity: 1
+    pointer-events: auto
   & div
     display: flex
     justify-content: center
@@ -86,7 +115,7 @@ i
     width: 250px
     text-align: center
     margin: 0
-    font-size: 12px
+    font-size: 14px
 
 .links
   width: 100%
@@ -95,7 +124,7 @@ i
   justify-content: center
   & a
     width: 30px
-    margin: 4px 10px
+    margin: 12px 16px
     display: flex
     justify-content: center
 
