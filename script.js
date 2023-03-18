@@ -14,5 +14,6 @@ shareButton.addEventListener('click', () => {
     const URL = window.location.href;
     navigator.clipboard.writeText(URL);
     console.log('Copied the URL!');
+    alert('Copied the URL!');
   }
 });
