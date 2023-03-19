@@ -1,14 +1,3 @@
-@property --gradient-angle
-  syntax: "<angle>"
-  initial-value: 0deg
-  inherits: false
-
-@keyframes rotation
-  0%
-    --gradient-angle: 0deg
-  100%
-    --gradient-angle: 360deg
-
 $bgColor: #1f2937
 $cardColor: white
 $iconColor: #000
@@ -42,6 +31,21 @@ body
   background-color: $cardColor
   border-radius: 10px
 
+// colorful frame
+:root
+  --gradient-angle: 0deg
+
+@property --gradient-angle
+  syntax: "<angle>"
+  initial-value: 0deg
+  inherits: false
+
+@keyframes rotation
+  0%
+    --gradient-angle: 0deg
+  100%
+    --gradient-angle: 360deg
+
 .card::before,
 .card::after
   content: ""
@@ -54,6 +58,7 @@ body
 
 .card::after
   filter: blur(3.5rem)
+//----------------------
 
 .header
   width: 100%
@@ -64,6 +69,7 @@ i
   font-size: 24px
   color: $iconColor
 
+// pop-out modal
 .modal
   display: flex
   justify-content: center
@@ -100,6 +106,7 @@ i
   color: rgba(0,0,0,0.5)
   &:hover
     color: rgb(0,0,0)
+//----------------------
 
 .modal-container
   display: flex
