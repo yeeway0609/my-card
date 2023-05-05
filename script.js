@@ -17,3 +17,15 @@ shareButton.addEventListener('click', () => {
     alert('Copied the URL!');
   }
 });
+
+const qrcode = document.querySelector('.qrcode');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.close-modal');
+qrcode.addEventListener('click', () => {
+  modal.showModal();
+})
+closeModal.addEventListener('click', () => {
+  modal.close();
+})
+
+
