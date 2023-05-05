@@ -12,12 +12,10 @@ body
       .share
         i.fa-solid.fa-share-from-square
       .qrcode
-        a(href="#open-modal")
-          i.fa-solid.fa-qrcode
-      #open-modal.modal
-        div
-          a(href="#").close-modal &times;
-          img(src="./img/qrcode.png")
+        i.fa-solid.fa-qrcode
+      dialog.modal
+        img(src="./img/qrcode.png")
+        .close-modal &times;
     .profile
       img(src="./img/avatar.jpg")
       h1 蘇奕幃 Alex Su

@@ -70,42 +70,29 @@ i
   color: $iconColor
 
 // pop-out modal
+.qrcode
+  cursor: pointer
+
 .modal
-  display: flex
-  justify-content: center
-  align-items: center
-  position: fixed
-  inset: 0
-  z-index: 10
-  background-color: rgba(0,0,0,0.5)
-  transition: all 0.3s
-  visibility: hidden
-  opacity: 0
-  pointer-events: none
-  &:target
-    visibility: visible
-    opacity: 1
-    pointer-events: auto
-  & div
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 300px
-    height: 300px
-    background: white
-    border-radius: 10px
-  & div img
+  width: 300px
+  height: 300px
+  background: white
+  border-radius: 10px
+  & img
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
     width: 150px
     height: 150px
-
-.close-modal
-  position: absolute
-  right: 16px
-  top: 4px
-  font-size: 32px
-  color: rgba(0,0,0,0.5)
-  &:hover
-    color: rgb(0,0,0)
+  & .close-modal
+    position: absolute
+    top: 4px
+    right: 16px
+    font-size: 32px
+    cursor: pointer
+    color: rgba(0,0,0,0.5)
+    &:hover
+      color: rgb(0,0,0)
 //----------------------
 
 .profile
