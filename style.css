@@ -120,6 +120,7 @@ i {
   text-align: center;
   margin: 0;
   font-size: 14px;
+  overflow-wrap: break-word;
 }
 
 .links {
